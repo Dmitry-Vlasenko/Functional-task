@@ -8,8 +8,9 @@ import java.util.function.Consumer;
 public class Main {
 
     public static void main(String[] args) {
-        List<User>  userslist = UserData.getUsers();
+        UserData userData = new UserData();
+        List<User> userList = userData.getUsers();
         Consumer<User> printUser = user -> System.out.println(user.getName() + " - " + user.getPhone());
-        userslist.forEach(printUser);
+        userList.forEach(printUser);
     }
 }
